@@ -1,0 +1,15 @@
+{
+    "name": "andrescordoba/phpmvcframework",
+    "authors": [
+        {
+            "name": "Andres Cordoba",
+            "email": "andrescordoba010@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "require": {}
+}
