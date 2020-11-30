@@ -71,7 +71,7 @@ class Router
     protected function layoutContent()
     {
         ob_start();
-        include_once Application::$ROOT_DIR."/views/layouts/main.php";
+        include_once Application::$ROOT_DIR."/views/layouts/main.php"; //Application is a static class and needs no initalization
         return ob_get_clean();
     }
 

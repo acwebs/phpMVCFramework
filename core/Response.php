@@ -3,7 +3,7 @@
 namespace app\core;
 
 /**
- * Class Application
+ * Class Response
  *
  * @author Andres Cordoba <andrescordoba010@gmail.com>
  * @package app\core
