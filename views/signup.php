@@ -16,7 +16,7 @@
 <div class="field">
   <label class="label">Lastname</label>
   <div class="control">
-    <input class="input" type="text" name="lasttname" placeholder="Text input">
+    <input class="input" type="text" name="lastname" placeholder="Text input">
   </div>
 </div>
 </div>
@@ -33,14 +33,14 @@
 <div class="field">
 <label class="label">Password</label>
   <p class="control has-icons-left">
-    <input class="input" type="password" placeholder="Password">
+    <input class="input" type="password"  name="password" placeholder="Password">
   </p>
 </div>
 
 <div class="field">
 <label class="label">Confirm Password</label>
   <p class="control has-icons-left">
-    <input class="input" type="cpassword" placeholder="Confirm Password">
+    <input class="input" type="password" name="passwordConfirm" placeholder="Confirm Password">
   </p>
 </div>
 

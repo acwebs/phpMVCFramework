@@ -47,8 +47,14 @@ class Router
             return $this->renderView('_404');
         }
 
-        if (is_string($callback))
+        if (is_string($callback)){
             return $this->renderView($callback);
+        }
+
+        if (is_array($callback)){
+            Application::$app->controller = new $callback[0]();
+            $callback[0] = Application::$app->controller;
+        }
         
         return call_user_func($callback, $this->request);
         // echo '<pre>';
@@ -70,8 +76,13 @@ class Router
 
     protected function layoutContent()
     {
+        $layout = Application::$app->controller->layout;
         ob_start();
-        include_once Application::$ROOT_DIR."/views/layouts/main.php"; //Application is a static class and needs no initalization
+        // echo '<pre>';
+        // var_dump($layout);
+        // echo '<pre>';
+        // exit;
+        include_once Application::$ROOT_DIR."/views/layouts/$layout.php"; //Application is a static class and needs no initalization
         return ob_get_clean();
     }
 
