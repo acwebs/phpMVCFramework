@@ -25,13 +25,13 @@ use app\models\RegisterModel;
             $registerModel = new RegisterModel();
             $registerModel->loadData($request->getBody());
 
-            echo '<pre>';
-        var_dump($registerModel);
-        echo '<pre>';
-        exit;
             if ($registerModel->validate() && $registerModel->register()) {
                 return 'success';
             }
+            echo '<pre>';
+        var_dump($registerModel->errors);
+        echo '<pre>';
+        exit;
             return $this->render('signup', [
                 'model' => $registerModel
             ]);
