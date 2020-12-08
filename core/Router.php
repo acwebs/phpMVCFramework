@@ -30,6 +30,7 @@ class Router
     {
         $this->routes['get'][$path] = $callback;
     }
+    
     public function post($path, $callback)
     {
         $this->routes['post'][$path] = $callback;
@@ -89,7 +90,6 @@ class Router
     protected function renderOnlyView($view, $params)
     {
         foreach ($params as $key => $value) {
-            # code...
             $$key = $value;
         }
         ob_start();

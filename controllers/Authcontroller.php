@@ -21,23 +21,22 @@ use app\models\RegisterModel;
 
      public function register(Request $request)
      {
+        $registerModel = new RegisterModel();
         if ($request->isPost()) {
-            $registerModel = new RegisterModel();
             $registerModel->loadData($request->getBody());
 
             if ($registerModel->validate() && $registerModel->register()) {
                 return 'success';
             }
-            echo '<pre>';
-        var_dump($registerModel->errors);
-        echo '<pre>';
-        exit;
             return $this->render('signup', [
                 'model' => $registerModel
             ]);
         }
+
         $this->setLayout('auth');
-         return $this->render('signup');
+         return $this->render('signup', [
+                'model' => $registerModel
+            ]);
      }
  }
  
